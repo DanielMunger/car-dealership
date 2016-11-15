@@ -6,20 +6,26 @@
   </head>
   <body>
     <h1>Lorens Chopshop</h1>
+    <form action="/carLot" method="post">
+      <div class="form-group">
+        <label for="yourName">Enter the name of the person who's listings you'd like to see:</label>
+        <input type="text" name="yourName" id="yourName">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
     <ul>
       @foreach(var car in Model)
       {
-      <li>@car.GetName()'s Car: 
-        <ul>
-          <li>@car.GetMake()</li>
-          <li>@car.GetModel()</li>
-          <li>@car.GetYear()</li>
-          <li>@car.GetPrice()</li>
-          <li>@car.GetColor()</li>
-        </ul>
-      </li>
-
-    }
+        <li>@car.GetName()'s Car:
+          <ul>
+            <li>@car.GetMake()</li>
+            <li>@car.GetModel()</li>
+            <li>@car.GetYear()</li>
+            <li>@car.GetPrice()</li>
+            <li>@car.GetColor()</li>
+          </ul>
+        </li>
+      }
     </ul>
   </body>
 </html>

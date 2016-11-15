@@ -15,8 +15,13 @@ namespace Cars
         return View["/carAdded.cshtml", newCar];
       };
       Get["/carLot"] =_=> {
-        List<Car> viewAll = Car.GetAll();
+        List<Car> viewAll = new List<Car> (Car.GetAll());
         return View["/carLot.cshtml", viewAll];
+      };
+      Post["/carLot"] =_=> {
+        Car.SetInput(Request.Form["yourName"]);
+        List<Car> viewSome = new List<Car> (Car.Filter());
+        return View["/carLot.cshtml", viewSome];
       };
     }
   }

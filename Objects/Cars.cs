@@ -10,8 +10,10 @@ namespace Cars.Objects
     private int _year;
     private float _price;
     private string _color;
+    private static string _input;
 
     private static List<Car> _cars = new List<Car> {};
+    private static List<Car> _matchingCars = new List<Car> {};
 
 
     public Car (string name, string make, string model, int year, float price, string color)
@@ -85,6 +87,28 @@ namespace Cars.Objects
     public static List<Car> GetAll()
     {
       return _cars;
+    }
+
+    public static string GetInput()
+    {
+      return _input;
+    }
+
+    public static void SetInput(string Input)
+    {
+      _input = Input;
+    }
+
+    public static List<Car> Filter()
+    {
+      foreach (Car c in _cars)
+      {
+        if (c._name == _input)
+        {
+          _matchingCars.Add(c);
+        }
+      };
+      return _matchingCars;
     }
   }
 }
