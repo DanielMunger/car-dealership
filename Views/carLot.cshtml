@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CarLot</title>
+  </head>
+  <body>
+    <h1>Lorens Chopshop</h1>
+    <ul>
+      @foreach(var car in Model)
+      {
+      <li>@car.GetName()'s Car: 
+        <ul>
+          <li>@car.GetMake()</li>
+          <li>@car.GetModel()</li>
+          <li>@car.GetYear()</li>
+          <li>@car.GetPrice()</li>
+          <li>@car.GetColor()</li>
+        </ul>
+      </li>
+
+    }
+    </ul>
+  </body>
+</html>
